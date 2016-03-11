@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "莞工体育选课助手",
+  "description": "让加载不出选课列表，仍然可以选课。添加本地js",
+  "version": "1.1",
+  "icons": 
+  { 
+    "16": "pic/icon16.png",             
+    "48": "pic/icon48.png",            
+    "128": "pic/icon128.png" 
+  },
+  "background": {
+        "scripts": ["js/background.js"]
+    },
+  "permissions": [
+        "webRequest","webRequestBlocking","*://tyxk.dgut.edu.cn/Public/static/*","*://*.google-analytics.com/*"
+    ],
+  "author": "https://github.com/mountainguan",
+  "homepage_url": "https://github.com/mountainguan/dguttyxkzs",
+  "content_scripts": [
+    {
+      "matches": ["http://tyxk.dgut.edu.cn/index.php?m=Home&c=Student&a=index","http://tyxk.dgut.edu.cn/index.php?m=&c=Student&a=index"],
+      "js": ["main.js"]
+    }
+  ]
+}
